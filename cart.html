@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Your Cart | BrewBean Café</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fffaf4;
+        }
+
+        header {
+            background-color: #6f4e37;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            position: relative;
+        }
+
+        .cart-link {
+            position: relative;
+            font-size: 1.4em;
+            color: white;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            font-size: 0.7em;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .cart-item img {
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        .cart-item-info h3 {
+            margin: 0;
+            color: #6f4e37;
+        }
+
+        .cart-item-info p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .cart-total {
+            font-weight: bold;
+            font-size: 1.4em;
+            margin-top: 30px;
+            text-align: right;
+        }
+
+        .empty {
+            text-align: center;
+            font-size: 1.2em;
+            color: #888;
+        }
+
+        footer {
+            background-color: #6f4e37;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">☕ BrewBean Café</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="cart.html" class="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Cart Content -->
+    <main>
+        <h1>Your Cart 🛒</h1>
+        <div id="cartItems"></div>
+        <div id="totalPrice" class="cart-total"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 BrewBean Café. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart JS -->
+    <script>
+        // Update cart icon count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById("cart-count").textContent = cart.length;
+        }
+
+        // Load cart items and show them
+        function displayCartItems() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById("cartItems");
+            const totalDiv = document.getElementById("totalPrice");
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p class='empty'>Your cart is empty!</p>";
+                totalDiv.textContent = "";
+                return;
+            }
+
+            cartContainer.innerHTML = "";
+
+            cart.forEach(item => {
+                const itemTotal = item.qty * item.price;
+                total += itemTotal;
+
+                const div = document.createElement("div");
+                div.className = "cart-item";
+                div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-item-info">
+            <h3>${item.name}</h3>
+            <p>Price: ₹${item.price} x ${item.qty}</p>
+            <p>Total: ₹${itemTotal}</p>
+          </div>
+        `;
+                cartContainer.appendChild(div);
+            });
+
+            totalDiv.textContent = `Total: ₹${total}`;
+        }
+
+        // On page load
+        window.onload = () => {
+            updateCartCount();
+            displayCartItems();
+        };
+    </script>
+
+</body>
+
+</html>

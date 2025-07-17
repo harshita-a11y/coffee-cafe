@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewBean Café</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #fdf6f0;
+            padding-top: 100px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4b2e2e;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-bar input {
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        .search-bar button {
+            margin-left: 5px;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #7b4d4d;
+            cursor: pointer;
+        }
+
+        .search-bar img,
+        .cart img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
+
+        .cart img {
+            width: 28px;
+            height: 28px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #4b2e2e;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .product h3 {
+            margin-top: 10px;
+            color: #4b2e2e;
+        }
+
+        .product p {
+            color: #777;
+        }
+
+        .product button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #4b2e2e;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            ☕ BrewBean Café
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="review.html">Review</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="right-section">
+            <!-- Search bar -->
+            <form class="search-bar" action="#" method="get" style="display: flex; align-items: center;">
+                <input type="text" name="query" placeholder="Search...">
+                <button type="submit">
+                    <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                </button>
+            </form>
+
+            <!-- Cart icon -->
+            <div class="cart">
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to BrewBean Café</h1>
+        <p>Your daily dose of fresh brewed happiness.</p>
+    </section>
+
+    <section class="products">
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Espresso">
+            <h3>Espresso</h3>
+            <p>Strong, rich and full of flavor.</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141" alt="Latte">
+            <h3>Latte</h3>
+            <p>Smooth and creamy delight.</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767" alt="Cappuccino">
+            <h3>Cappuccino</h3>
+            <p>Perfect blend of coffee and froth.</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="../tea website/images/1.jpeg" alt="Americano">
+            <h3>Americano</h3>
+            <p>Classic and bold black coffee.</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Mocha">
+            <h3>Mocha</h3>
+            <p>Chocolate-infused rich coffee.</p>
+            <button>Add to Cart</button>
+        </div>
+        <!-- Contact Us Section -->
+
+        </style>
+
+        <!-- Contact Us Section -->
+        <section class="contact-us">
+            <h2>Contact Us</h2>
+            <div class="social-icons contact-inline">
+                <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook">
+                </a>
+                <a href="https://wa.me/your-number" target="_blank" title="WhatsApp">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" alt="YouTube">
+                </a>
+            </div>
+        </section>
+
+        <!-- CSS -->
+        <style>
+            .contact-us {
+                text-align: center;
+                padding: 40px;
+                background-color: #f9f9f9;
+                width: 100vw;
+                min-height: 100vh;
+                box-sizing: border-box;
+            }
+
+            .contact-us h2 {
+                margin-bottom: 20px;
+                font-size: 28px;
+            }
+
+            .contact-us .social-icons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 40px;
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .contact-us .social-icons a {
+                display: inline-block;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-us .social-icons img {
+                width: 50px;
+                height: 50px;
+                filter: grayscale(100%);
+            }
+
+            .contact-us .social-icons a:hover img {
+                filter: grayscale(0%);
+                transform: scale(1.2);
+            }
+        </style>
+
+        <script>
+            // JS for add to cart button
+            const buttons = document.querySelectorAll('.product button');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    alert('Item added to cart!');
+                });
+            });
+        </script>
+</body>
+
+</html>

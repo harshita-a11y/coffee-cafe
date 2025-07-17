@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>About Us - BrewBean Café</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fffaf4;
+            color: #333;
+        }
+
+        header {
+            background-color: #6f4e37;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            background-color: #f4e3d7;
+            padding: 60px 30px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .about-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-section h2 {
+            font-size: 2.4em;
+            margin-bottom: 30px;
+            color: #6f4e37;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-content img {
+            width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .about-text p {
+            font-size: 1.05em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        footer {
+            background-color: #6f4e37;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-content img {
+                width: 90%;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <title>Header with Cart & Search</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fffaf0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #6f4e37;
+            padding: 15px 30px;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc88;
+        }
+
+        .icon-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-bar input {
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        .search-bar button {
+            margin-left: 5px;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #7b4d4d;
+            cursor: pointer;
+        }
+
+        .search-bar img,
+        .cart img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+        }
+
+
+        /* Cart Icon */
+        .cart-container {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            width: 28px;
+            height: 28px;
+            filter: invert(1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -8px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .icon-section {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="logo">☕ BrewBean Café</div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="review.html">Review</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+            </nav>
+            <div class="icon-section">
+                <!-- Search -->
+                <form class="search-bar" action="#" method="get" style="display: flex; align-items: center;">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit">
+                        <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search">
+                    </button>
+                </form>
+
+                <!-- Cart -->
+                <div class="cart-container" id="cartIcon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart" class="cart-icon">
+                    <span class="cart-count">2</span>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- JavaScript -->
+        <script>
+            // Search action
+            document.getElementById("searchBtn").addEventListener("click", function () {
+                const query = document.getElementById("searchInput").value;
+                alert("You searched for: " + query);
+            });
+
+            // Cart icon action
+            document.getElementById("cartIcon").addEventListener("click", function () {
+                alert("Opening Cart Page...");
+                // window.location.href = 'cart.html'; // If you have a cart page
+            });
+        </script>
+
+
+
+
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <img src="../coffee cafe/images/10.jpeg" alt="Coffee Story">
+                <div class="about-text">
+                    <p>
+                        At <strong>BrewBean Café</strong>, we believe that coffee is more than just a drink —
+                        it’s a
+                        passion, a culture, and a daily ritual.
+                        Founded in 2020, we’ve been serving handcrafted brews made from ethically sourced beans
+                        from around
+                        the world.
+                    </p>
+                    <p>
+                        Whether you love a strong espresso, a creamy latte, or a cold brew, we’re here to make
+                        your day
+                        better — one cup at a time.
+                        Come visit us or order online for freshly ground perfection!
+                    </p>
+                    <p><strong>Brewing happiness, one sip at a time. ☕</strong></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Us Section -->
+        <section class="contact-us">
+            <h2>Contact Us</h2>
+            <div class="social-icons contact-inline">
+                <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook">
+                </a>
+                <a href="https://wa.me/your-number" target="_blank" title="WhatsApp">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" alt="YouTube">
+                </a>
+            </div>
+        </section>
+
+        <!-- CSS -->
+        <style>
+            .contact-us {
+                text-align: center;
+                padding: 40px;
+                background-color: #f9f9f9;
+                width: 100vw;
+                min-height: 100vh;
+                box-sizing: border-box;
+            }
+
+            .contact-us h2 {
+                margin-bottom: 20px;
+                font-size: 28px;
+            }
+
+            .contact-us .social-icons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                gap: 40px;
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .contact-us .social-icons a {
+                display: inline-block;
+                transition: transform 0.3s ease;
+            }
+
+            .contact-us .social-icons img {
+                width: 50px;
+                height: 50px;
+                filter: grayscale(100%);
+            }
+
+            .contact-us .social-icons a:hover img {
+                filter: grayscale(0%);
+                transform: scale(1.2);
+            }
+        </style>
+
+        <!-- Scroll Reveal JavaScript -->
+        <script>
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target); // trigger only once
+                    }
+                });
+            });
+
+            observer.observe(document.querySelector(".about-section"));
+        </script>
+
+    </body>
+
+</html>
